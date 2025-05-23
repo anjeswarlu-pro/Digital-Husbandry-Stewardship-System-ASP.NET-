@@ -1,0 +1,547 @@
+﻿
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+    background: linear-gradient(147deg, #166d3b 0%, #000000 74%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .navbar,
+.content .image-link {
+    background-color: black;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0; /* Align to the right */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 20px 10px; /* Adjust padding as needed */
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+    .navbar a {
+        color: #f2f2f2;
+        text-align: center;
+        padding: 10px 25px; /* Adjusted padding */
+        text-decoration: none;
+        font-size: 22px;
+        position: relative;
+        cursor: pointer;
+        z-index: 1; /* Added z-index */
+    }
+
+
+
+
+        .navbar a::after {
+            content: "";
+            position: absolute;
+            bottom: -2px; /* Adjusted position to align with the bottom of the link */
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: transparent;
+            transition: width 0.5s ease;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+            background-color: red;
+        }
+
+
+
+/* Centering the heading */
+.heading {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    text-align: center;
+    width: 100%; /* Make sure it takes full width */
+    margin: auto; /* Center horizontally */
+    position: absolute; /* Positioning */
+    top: 50%; /* Place it at the vertical center */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    left: 0;
+    right: 0;
+}
+
+    .heading h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: bold;
+        color: #f2f2f2;
+    }
+
+/* Rainbow blink effect for the h1 */
+@keyframes rainbow {
+    0% {
+        color: #ff0000;
+    }
+
+    14% {
+        color: #ff8000;
+    }
+
+    28% {
+        color: #ffff00;
+    }
+
+    42% {
+        color: #80ff00;
+    }
+
+    57% {
+        color: #00ff00;
+    }
+
+    71% {
+        color: #00ff80;
+    }
+
+    85% {
+        color: #00ffff;
+    }
+
+    100% {
+        color: #0080ff;
+    }
+}
+
+.heading h1 {
+    animation: rainbow 3s infinite alternate;
+}
+
+/** .search-container {
+            position: fixed;
+            top: 0;
+            left: 5px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        input[type=text] {
+            padding: 6px;
+            font-size: 17px;
+            border: solid;
+        }
+
+        button[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+          */
+.container {
+    position: fixed; /* Fixed position */
+    top: 15px; /* Adjust top position as needed */
+    right: 20%; /* Adjust right position as needed */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.image-link {
+    position: absolute;
+    top: 0px; /* adjust this value as needed */
+    right: 2%; /* adjust this value as needed */
+    width: 50px; /* set the width of the image */
+    height: auto; /* maintain aspect ratio */
+    clip-path: circle(50%);
+    transition: transform 0.3s ease-in-out; /* add smooth transition */
+}
+
+    .image-link:hover {
+        transform: scale(1.2); /* scale up the image on hover */
+    }
+
+
+
+
+.dashboard-panel {
+    position: fixed;
+    top: 0;
+    right: -500px; /* Initially slide out of view */
+    width: 500px; /* Adjust width as needed */
+    height: 100%; /* Full height */
+    background-color: honeydew;
+    border-left: 1px solid #ccc; /* Border for separation */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better appearance */
+    z-index: 1000; /* Ensure it's above other content */
+    transition: right 0.3s ease; /* Smooth transition for sliding effect */
+}
+
+    .dashboard-panel.open {
+        right: 0; /* Slide into view when opened */
+    }
+
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #999;
+}
+
+    .close-button:hover {
+        color: #666;
+    }
+
+
+
+body {
+    margin: 20px;
+}
+.cart {
+    position: relative;
+    margin-top: 50px;
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align items to the end (right side) */
+}
+
+.cartimg {
+    width: 50px; /* set the width of the image */
+    height: auto; /* maintain aspect ratio */
+    clip-path: circle(50%);
+    margin-right: 10%;
+}
+
+.shopping-section {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 5%;
+}
+
+.shopping-section {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+
+.rightdropdown-box {
+    margin-top: 50px;
+    margin-bottom: 84px;
+    padding: 60px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 21px;
+    width: 95%;
+    height: 300px;
+}
+
+    .rightdropdown-box label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #ffffff;
+        font-size: 23px;
+    }
+.custom-dropdown {
+    width: 500px;
+   
+   
+    border-radius: 4px; /* Add border radius */
+    background-color: #fff; /* Add background color */
+    font-size:24px; /* Adjust font size */
+}
+
+    .custom-dropdown:focus {
+        outline: none; /* Remove default focus outline */
+        border-color: #007bff; /* Add focus border color */
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Add focus box shadow */
+    }
+
+
+
+.rightdropdown-and-search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.rightsearch-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+    margin-left: 60px;
+}
+
+    .rightsearch-bar input[type="text"] {
+        flex: 1;
+        margin-right: 5px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 300px;
+        font-size: 24px;
+    }
+
+    .rightsearch-bar button {
+        border: none;
+        background-color: #007bff; /* Change button background color */
+        color: white; /* Change button text color */
+        padding: 8px 12px; /* Adjust button padding */
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 24px;
+    }
+
+        .rightsearch-bar button:hover {
+            background-color: #00ff80; /* Change button background color on hover */
+        }
+
+        /* Optional: Adjust button style for better accessibility */
+        .rightsearch-bar button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Add focus ring */
+        }
+
+.rightinformation {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.information-section {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 5%;
+}
+
+    .information-section h2 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #ffffff;
+    }
+
+.coner {
+    display: flex;
+}
+
+.left-content {
+    width: 50%;
+    float: left;
+}
+
+.right-content {
+    width: 50%;
+    float: right;
+}
+
+.slides {
+    position: relative;
+    width: 400px; /* Adjusted width to fit within the layout */
+    height: 400px; /* Adjust height as needed */
+}
+
+    .slides img {
+        position: absolute;
+        top: 50px;
+        left: 80px;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        width: 180%; /* Increased max-width */
+        max-height: 100%; /* Increased max-height */
+        object-fit: cover;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+
+        .slides img.active {
+            opacity: 1;
+        }
+
+.sliding-container button {
+    margin-top: 80px;
+}
+
+.dropdown-box {
+    margin-top: 50px;
+    padding: 60px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 21px;
+    width: 95%;
+    height: 400px;
+}
+
+    .dropdown-box label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #ffffff;
+        font-size: 23px;
+    }
+
+#DropDownList1,
+#DropDownList2 {
+    padding: 5px;
+    width: 300px;
+    margin-top: 15px;
+    margin-bottom: 15px; /* Adjust width as needed */
+}
+
+
+.dropdown-and-search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+    margin-left: 60px;
+}
+
+    .search-bar input[type="text"] {
+        flex: 1;
+        margin-right: 5px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 300px;
+        font-size: 24px;
+    }
+
+    .search-bar button {
+        border: none;
+        background-color: #007bff; /* Change button background color */
+        color: white; /* Change button text color */
+        padding: 8px 12px; /* Adjust button padding */
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 24px;
+    }
+
+        .search-bar button:hover {
+            background-color: #00ff80; /* Change button background color on hover */
+        }
+
+        /* Optional: Adjust button style for better accessibility */
+        .search-bar button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Add focus ring */
+        }
+
+.information {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 70px;
+}
+.shopping-module {
+    border: 1px solid #ccc;
+    padding: 40px;
+    width: 96%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribute items evenly */
+}
+
+.prodiv {
+    padding: 25px;
+    text-align: center;
+    background-color: white;
+    font-size: 20px;
+    color: Black;
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: calc(33.33% - 20px); /* Adjust width for 3 items per row */
+    box-sizing: border-box; /* Include borders and paddings in width calculation */
+    border: 1px solid #ccc;
+}
+
+.top-div {
+    /* Additional styles for top divs */
+    border-bottom: none; /* Remove bottom border for top divs */
+}
+
+.bottom-div {
+    /* Additional styles for bottom divs */
+    border-top: none; /* Remove top border for bottom divs */
+}
+
+.prodiv img {
+    width: 50%;
+    max-width: 100%; /* Ensures images don't exceed the width of their container */
+    height: 50%; /* Maintains aspect ratio */
+    margin-bottom: 10px; /* Adjust spacing between image and text */
+    display: block; /* Ensures the image is treated as a block element */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+}
+
+#iframeContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px; /* Adjust width as needed */
+    height: 100%;
+    background-color: white;
+    border-left: 1px solid #ccc; /* Border for separation */
+    z-index: 9999; /* Ensure iframe stays on top */
+    display: none; /* Hide by default */
+}
+/* Style the close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size:35px;
+}
+    .close-btn:hover {
+        color: red;
+    }
+
+.quantity-input {
+    font-size: 20px;
+   
+    top: 20px; /* Adjust this value as needed */
+}
+.my-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+    .my-button:hover {
+        background-color: #45a049; /* Darker Green */
+    }

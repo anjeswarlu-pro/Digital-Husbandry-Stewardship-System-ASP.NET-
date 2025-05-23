@@ -1,0 +1,518 @@
+﻿
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+    background: linear-gradient(147deg, #166d3b 0%, #000000 74%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .navbar,
+.content .image-link {
+    background-color: black;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0; /* Align to the right */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 20px 10px; /* Adjust padding as needed */
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+    .navbar a {
+        color: #f2f2f2;
+        text-align: center;
+        padding: 10px 25px; /* Adjusted padding */
+        text-decoration: none;
+        font-size: 22px;
+        position: relative;
+        cursor: pointer;
+        z-index: 1; /* Added z-index */
+    }
+
+
+
+
+        .navbar a::after {
+            content: "";
+            position: absolute;
+            bottom: -2px; /* Adjusted position to align with the bottom of the link */
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: transparent;
+            transition: width 0.5s ease;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+            background-color: red;
+        }
+
+
+
+/* Centering the heading */
+.heading {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    text-align: center;
+    width: 100%; /* Make sure it takes full width */
+    margin: auto; /* Center horizontally */
+    position: absolute; /* Positioning */
+    top: 50%; /* Place it at the vertical center */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    left: 0;
+    right: 0;
+}
+
+    .heading h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: bold;
+        color: #f2f2f2;
+    }
+
+/* Rainbow blink effect for the h1 */
+@keyframes rainbow {
+    0% {
+        color: #ff0000;
+    }
+
+    14% {
+        color: #ff8000;
+    }
+
+    28% {
+        color: #ffff00;
+    }
+
+    42% {
+        color: #80ff00;
+    }
+
+    57% {
+        color: #00ff00;
+    }
+
+    71% {
+        color: #00ff80;
+    }
+
+    85% {
+        color: #00ffff;
+    }
+
+    100% {
+        color: #0080ff;
+    }
+}
+
+.heading h1 {
+    animation: rainbow 3s infinite alternate;
+}
+
+/** .search-container {
+            position: fixed;
+            top: 0;
+            left: 5px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        input[type=text] {
+            padding: 6px;
+            font-size: 17px;
+            border: solid;
+        }
+
+        button[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+          */
+.container {
+    position: fixed; /* Fixed position */
+    top: 15px; /* Adjust top position as needed */
+    right: 20%; /* Adjust right position as needed */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.image-link {
+    position: absolute;
+    top: 0px; /* adjust this value as needed */
+    right: 2%; /* adjust this value as needed */
+    width: 50px; /* set the width of the image */
+    height: auto; /* maintain aspect ratio */
+    clip-path: circle(50%);
+    transition: transform 0.3s ease-in-out; /* add smooth transition */
+}
+
+    .image-link:hover {
+        transform: scale(1.2); /* scale up the image on hover */
+    }
+
+
+
+
+.dashboard-panel {
+    position: fixed;
+    top: 0;
+    right: -500px; /* Initially slide out of view */
+    width: 500px; /* Adjust width as needed */
+    height: 100%; /* Full height */
+    background-color: honeydew;
+    border-left: 1px solid #ccc; /* Border for separation */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better appearance */
+    z-index: 1000; /* Ensure it's above other content */
+    transition: right 0.3s ease; /* Smooth transition for sliding effect */
+}
+
+    .dashboard-panel.open {
+        right: 0; /* Slide into view when opened */
+    }
+
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #999;
+}
+
+    .close-button:hover {
+        color: #666;
+    }
+
+.container-fluid {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 4%;
+}
+
+.carousel-container {
+    display: inline-block; /* Change to inline-block */
+    margin-top: 10vh;
+    margin-left: 100px; /* Adjusted margin */
+    width: 60%; /* Adjusted width to fit within the layout */
+    height: 400px;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.farmers-container {
+    display: inline-block; /* Change to inline-block */
+    margin-top: 10vh;
+    margin-left: -180px; /* Adjusted margin */
+    width: 700px; /* Adjusted width to fit within the layout */
+
+    border-radius: 10px;
+}
+
+.farmers-paragraph {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+    .farmers-paragraph p {
+        font-size: 35px; /* Reduced font size for better fit */
+        line-height: 1.6;
+        color: #FFFFFF; /* Changed text color for better readability */
+    }
+
+body {
+    margin: 20px;
+}
+
+
+
+    .information-section {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 5%;
+}
+
+    .information-section h2 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #ffffff;
+    }
+
+.coner {
+    display: flex;
+}
+
+.left-content {
+    width: 50%;
+    float: left;
+}
+.right-content {
+    width: 50%;
+    float: right;
+
+}
+
+.slides {
+    position: relative;
+    width: 400px; /* Adjusted width to fit within the layout */
+    height: 400px; /* Adjust height as needed */
+}
+
+    .slides img {
+        position: absolute;
+        top: 50px;
+        left: 80px;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        width: 180%; /* Increased max-width */
+        max-height: 100%; /* Increased max-height */
+        object-fit: cover;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+
+        .slides img.active {
+            opacity: 1;
+        }
+
+.sliding-container button {
+    margin-top: 80px;
+}
+
+.dropdown-box {
+    margin-top: 50px;
+    padding: 60px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 21px;
+    width:95%;
+    height:400px;
+}
+
+    .dropdown-box label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #ffffff;
+        font-size: 23px;
+    }
+
+#DropDownList1,
+#DropDownList2 {
+    padding:5px;
+    width: 300px; 
+    margin-top:15px;
+    margin-bottom:15px;/* Adjust width as needed */
+} 
+
+
+.dropdown-and-search-container {
+    display: flex;
+    align-items: center;
+    margin-left:40px;
+
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-top:80px;
+    margin-left: 60px;
+}
+
+    .search-bar input[type="text"] {
+        flex: 1;
+        margin-right: 5px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 300px;
+        font-size: 24px;
+    }
+
+    .search-bar button {
+        border: none;
+        background-color: #007bff; /* Change button background color */
+        color: white; /* Change button text color */
+        padding: 8px 12px; /* Adjust button padding */
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 24px;
+    }
+
+        .search-bar button:hover {
+            background-color: #00ff80; /* Change button background color on hover */
+        }
+
+        /* Optional: Adjust button style for better accessibility */
+        .search-bar button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Add focus ring */
+        }
+.information {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size:24px;
+    color:#ffffff;
+    line-height:70px;
+    /* Add more styling as needed */
+}
+.panel {
+    /* Your CSS styles for the panel container */
+    border: 1px solid #ccc;
+    padding: 10px;
+   
+    color:white;
+}
+.predict-container {
+    display: flex;
+}
+
+.predict {
+    border: 1px solid #ccc;
+    color: white;
+    font-size: 16px; /* Reduced font size */
+    padding: 8px; /* Reduced padding */
+    flex: 1; /* Take up remaining space */
+    margin-right: 20px;
+}
+
+ .image {
+    border: 1px solid #ccc;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    flex: 1; /* Take up remaining space */
+}
+
+.image {
+    width: 300px; /* Fixed width for image container */
+}
+
+    .image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+.predict label {
+    margin-bottom: 30px;
+    margin-right: 10px;
+    display: inline-block;
+    width: 500px;
+    font-size:24px;
+}
+
+.predict input[type="text"] {
+    width: 40%; /* Adjust the width as per your requirement */
+    padding: 5px;
+    font-size: 14px; /* Reduced font size for input */
+}   
+.result {
+    border: 1px solid #ccc;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+.main{
+    text-align:center;
+
+}
+
+   
+    /* Reduced font size for input */
+}
+.predict input[placeholder] {
+    
+    height: auto; /* Adjust the width as per your requirement */
+    padding: 5px;
+    font-size: 24px;
+}
+#predictButton {
+    width: 30%;
+    height: auto; /* Adjust the width as per your requirement */
+    padding: 5px;
+    margin-bottom: 15px;
+    background-color:darkgray;
+   
+    color: Black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+    #predictButton:hover {
+        background-color:mediumspringgreen; /* Darker green */
+    }
+
+
+
+.repage {
+    position: relative;
+    margin-top: 50px; 
+    font-size:20px;
+    /* Adjust this value for the desired space */
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align items to the end (right side) */
+}
+    .repage p {
+        color: white;
+        position: relative;
+        top: 20px;
+        margin-right: 30px;
+        display: flex; /* Use flexbox for layout */
+        justify-content: flex-end; /* Align items to the end (right side) */
+    }
+
+.rebutton {
+    padding: 10px 20px;
+    width:10%;
+    background-color: darkgrey; /* Green */
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-right: 30px;
+}
+
+    .rebutton:hover {
+        background-color: #45a049; /* Darker green */
+    }
+    .rebutton:last-child {
+        margin-right: 10px; /* Remove margin from the last button */
+    }

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Quick.AspNetCore.Components.Web.Extensions.props" />
+</Project>

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.AspNetCore.Components.Web.Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AspNetCore.Components.Web.Extensions.Head.HeadTagBase">
+            <summary>
+            Serves as a base for components that represent tags in the HTML head.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Components.Web.Extensions.Head.HeadTagBase.Attributes">
+            <summary>
+            Gets or sets a collection of additional attributes that will be applied to the meta element.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Components.Web.Extensions.Head.HeadTagBase.TagName">
+            <summary>
+            Gets the name of the tag being represented.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Components.Web.Extensions.Head.HeadTagBase.OnParametersSet">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Components.Web.Extensions.Head.HeadTagBase.OnAfterRenderAsync(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Components.Web.Extensions.Head.HeadTagBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Components.Web.Extensions.Head.HeadTagBase.DisposeAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNetCore.Components.Web.Extensions.Head.Link">
+            <summary>
+            A component that adds a link tag to the HTML head.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Components.Web.Extensions.Head.Link.TagName">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNetCore.Components.Web.Extensions.Head.Meta">
+            <summary>
+            A component that adds a meta tag to the HTML head.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Components.Web.Extensions.Head.Meta.TagName">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNetCore.Components.Web.Extensions.Head.Script">
+            <summary>
+            A component that adds a link tag to the HTML head.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Components.Web.Extensions.Head.Script.TagName">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNetCore.Components.Web.Extensions.Head.Title">
+            <summary>
+            A component that changes the title of the document.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Components.Web.Extensions.Head.Title.Value">
+            <summary>
+            Gets or sets the value to use as the document's title.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Components.Web.Extensions.Head.Title.OnParametersSet">
+            <summary>
+            override OnParametersSet
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Components.Web.Extensions.Head.Title.OnAfterRenderAsync(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Components.Web.Extensions.Head.Title.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Components.Web.Extensions.Head.Title.SetTitleAsync(System.String)">
+            <summary>
+            Set title
+            </summary>
+            <param name="title">Title to be set</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
